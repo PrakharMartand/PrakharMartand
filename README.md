@@ -1,10 +1,6 @@
 
 # Hi 👋 I am Prakhar Martand 🙂! 
-I am a SDET Intern at `[Harness]`(https://www.harness.io/), where I specialize in solving complex biomedical data problems using cutting-edge technology and tools.
-
-- 🌐 Visit my [portfolio website](https://pr2tik1.github.io/) for more information and to get in touch.
-- 👋 Check out my personal [blog](https://pr2tik1.github.io/blog/) for articles and insights.
-- ✍️ Follow me on [Medium](https://pr2tik1.medium.com/) for more written content.
+I am a SDET Intern at [`Harness`](https://www.harness.io/), where I test and break things when not at right place.
 
 ---
 
