@@ -5,8 +5,8 @@ I am a SDET Intern at [`Harness`](https://www.harness.io/), where I test and bre
 ---
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=PrakharMartand&show_icons=true&theme=bear" width="400">
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=PrakharMartand&theme=dark&hide_border=true" width="400">
+  <img src="https://github-readme-stats.vercel.app/api?username=PrakharMartand&show_icons=true&theme=highcontrast" width="400"!important>
+  <img src="https://github-readme-streak-stats.herokuapp.com?user=PrakharMartand&theme=dark&hide_border=true" width="430">
 </p>
 
 ---
