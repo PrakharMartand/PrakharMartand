@@ -1,6 +1,6 @@
 
 # Hi 👋 I am Prakhar Martand 🙂! 
-I am a SDET Intern at [`Harness`](https://www.harness.io/), where I test and break things when not at right place.
+I am a SDET at [`Harness`](https://www.harness.io/), where I test and break things when not at right place.
 
 ---
 
