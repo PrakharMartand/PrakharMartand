@@ -1,6 +1,6 @@
 
 # Hi 👋 I am Prakhar Martand 🙂! 
-I am a SDET at [`Harness`](https://www.harness.io/), where I test and break things when not at right place.
+I am a SDET at [`Prophecy`](https://www.prophecy.io/) Have played key roles as SDET Consultant at [`Harness`](https://www.harness.io/), this is where I test and break things when not at right place.
 
 ---
 
