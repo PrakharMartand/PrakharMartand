@@ -148,7 +148,7 @@
   function statTiles() {
     const g = P.github;
     if (!g) {
-      return [h("p", {}, "◌ The nightly readme.spec workflow hasn't run yet. Live GitHub numbers appear here after its first run.")];
+      return [h("p", {}, "◌ The readme.spec workflow hasn't run yet. Live GitHub numbers appear here after its first run.")];
     }
     const tiles = [
       ["contributions", g.contributions], ["longest streak", `${g.longestStreak}d`], ["current streak", `${g.currentStreak}d`],
@@ -160,7 +160,7 @@
       ),
       g.languages?.length ? h("div", { class: "langbar" }, g.languages.map((l) => h("span", { style: `flex:${l.pct};background:${l.color}` }))) : "",
       g.languages?.length ? h("div", { class: "legend" }, g.languages.map((l) => h("span", {}, h("i", { style: `background:${l.color}` }), `${l.name} ${l.pct}%`))) : "",
-      h("p", {}, `fetched ${P.runDate} · refreshed nightly by GitHub Actions`),
+      h("p", {}, `fetched ${P.runDate} · refreshed hourly by GitHub Actions`),
     ];
   }
 
@@ -343,7 +343,7 @@
     experience: () => print(P.experience.map((e) => `${e.current ? "●" : "○"} ${e.role} @ ${e.company}: ${e.note}`).join("\n")),
     github() {
       const g = P.github;
-      if (!g) return print("◌ awaiting the first nightly CI run.", "warn");
+      if (!g) return print("◌ awaiting the first CI run.", "warn");
       print(`${g.contributions} contributions · longest streak ${g.longestStreak}d · ${g.repos} repos · ★ ${g.stars} · ${g.pullRequests} PRs`, "ok");
     },
     contact() {

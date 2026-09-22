@@ -145,7 +145,7 @@ ${config}
 
 ${btn("bug", 40)} ${btn("hire", 40)}
 
-<sub>This profile is a test suite. It is generated from <a href="profile.json"><code>profile.json</code></a> and re-runs every night in GitHub Actions.<br>
+<sub>This profile is a test suite. It is generated from <a href="profile.json"><code>profile.json</code></a> and re-runs every hour in GitHub Actions.<br>
 Fork it, edit one file, and ship your own. See <a href="TEMPLATE.md"><code>TEMPLATE.md</code></a>.</sub>
 
 </div>

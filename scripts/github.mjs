@@ -12,6 +12,7 @@ const QUERY = `query($login: String!) {
       }
     }
     contributionsCollection {
+      restrictedContributionsCount
       contributionCalendar { totalContributions weeks { contributionDays { date contributionCount } } }
     }
   }
@@ -32,6 +33,7 @@ function streaks(days) {
 }
 
 function summarize(user) {
+  const collection = user.contributionsCollection;
   const repos = user.repositories.nodes;
   const langs = new Map();
   for (const r of repos) {
@@ -47,13 +49,17 @@ function summarize(user) {
     .slice(0, 6)
     .map((l) => ({ name: l.name, color: l.color, pct: +((l.size / total) * 100).toFixed(1) }));
 
-  const cal = user.contributionsCollection.contributionCalendar;
+  const cal = collection.contributionCalendar;
+  // Private contributions the token can't see are only available as a total, not per day.
+  const hiddenPrivate = collection.restrictedContributionsCount;
   const weeks = cal.weeks.map((w) => w.contributionDays.map((d) => ({ date: d.date, count: d.contributionCount })));
   const { longest, current } = streaks(weeks.flat());
 
   return {
-    fetchedAt: new Date().toISOString(),
-    contributions: cal.totalContributions,
+    // Date only, so hourly runs with unchanged data produce no diff and no commit.
+    fetchedAt: new Date().toISOString().slice(0, 10),
+    contributions: cal.totalContributions + hiddenPrivate,
+    hiddenPrivate,
     longestStreak: longest,
     currentStreak: current,
     repos: user.repositories.totalCount,
@@ -65,23 +71,38 @@ function summarize(user) {
   };
 }
 
+async function query(login, token) {
+  const res = await fetch("https://api.github.com/graphql", {
+    method: "POST",
+    headers: { Authorization: `bearer ${token}`, "Content-Type": "application/json", "User-Agent": "readme-spec" },
+    body: JSON.stringify({ query: QUERY, variables: { login } }),
+  });
+  const body = await res.json();
+  if (!res.ok || body.errors || !body.data?.user) throw new Error(JSON.stringify(body.errors ?? body).slice(0, 300));
+  return summarize(body.data.user);
+}
+
 export async function loadGithub(login, cachePath) {
   const cached = await readFile(cachePath, "utf8").then(JSON.parse).catch(() => null);
-  const token = process.env.GITHUB_TOKEN;
-  if (!token) return cached;
-  try {
-    const res = await fetch("https://api.github.com/graphql", {
-      method: "POST",
-      headers: { Authorization: `bearer ${token}`, "Content-Type": "application/json", "User-Agent": "readme-spec" },
-      body: JSON.stringify({ query: QUERY, variables: { login } }),
-    });
-    const body = await res.json();
-    if (!res.ok || body.errors || !body.data?.user) throw new Error(JSON.stringify(body.errors ?? body).slice(0, 300));
-    const data = summarize(body.data.user);
-    await writeFile(cachePath, JSON.stringify(data, null, 2) + "\n");
-    return data;
-  } catch (err) {
-    console.warn(`github fetch failed, using cached data: ${err.message}`);
-    return cached;
+  // A personal token reads the profile as its owner, which includes private and org contributions.
+  // The Actions GITHUB_TOKEN is a bot identity that only sees public activity.
+  const tokens = [
+    ["your personal token (README_SPEC_TOKEN)", process.env.README_SPEC_TOKEN],
+    ["the Actions bot token", process.env.GITHUB_TOKEN],
+  ].filter(([, t]) => t);
+  for (const [who, token] of tokens) {
+    try {
+      const data = await query(login, token);
+      console.log(`github: read as ${who} · ${data.contributions} contributions`);
+      if (data.hiddenPrivate > 0) {
+        console.warn(`github: ${data.hiddenPrivate} private contributions are hidden from ${who}; the grid and streaks cover public activity only. Add a README_SPEC_TOKEN secret to include them.`);
+      }
+      await writeFile(cachePath, JSON.stringify(data, null, 2) + "\n");
+      return data;
+    } catch (err) {
+      console.warn(`github: fetch as ${who} failed: ${err.message}`);
+    }
   }
+  if (tokens.length) console.warn("github: using cached data");
+  return cached;
 }

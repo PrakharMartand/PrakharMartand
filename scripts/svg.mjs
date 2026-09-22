@@ -320,11 +320,11 @@ export function historySvg(gh) {
   const pendingNote = gh
     ? ""
     : `<rect x="${w / 2 - 290}" y="${y0 + gridH / 2 - 18}" width="580" height="34" rx="8" fill="${C.bg}" stroke="${C.border}"/>
-       <text x="${w / 2}" y="${y0 + gridH / 2 + 4}" text-anchor="middle" class="mono" font-size="13" fill="${C.muted}">◌ awaiting first CI run: the readme.spec workflow fills this in nightly</text>`;
+       <text x="${w / 2}" y="${y0 + gridH / 2 + 4}" text-anchor="middle" class="mono" font-size="13" fill="${C.muted}">◌ awaiting first CI run: the readme.spec workflow fills this in hourly</text>`;
 
   const fmt = (v, suffix = "") => (gh && v != null ? Number(v).toLocaleString("en-US") + suffix : "—");
   const stats = [
-    ["total runs", fmt(gh?.contributions), C.text],
+    [gh?.hiddenPrivate ? `runs · ${fmt(gh.hiddenPrivate)} private` : "total runs", fmt(gh?.contributions), C.text],
     ["current streak", fmt(gh?.currentStreak, "d"), C.green],
     ["longest streak", fmt(gh?.longestStreak, "d"), C.green],
     ["pull requests", fmt(gh?.pullRequests), C.blue],
