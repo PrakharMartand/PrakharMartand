@@ -260,7 +260,7 @@ window.PROFILE = {
     "repos": 7,
     "stars": 0,
     "followers": 1,
-    "pullRequests": 60,
+    "pullRequests": 61,
     "languages": [
       {
         "name": "JavaScript",
