@@ -1,0 +1,155 @@
+{
+  "name": "Prakhar Martand",
+  "handle": "PrakharMartand",
+  "title": "SDET",
+  "tagline": "I break things for a living, so your users don't have to.",
+  "summary": "Software Development Engineer in Test at Prophecy, previously an SDET Consultant at Harness. I design automation that catches regressions before they ship, and lately I build agentic AI workflows, custom skills and knowledge bases that make testing smarter.",
+  "site": "https://prakharmartand.github.io/PrakharMartand/",
+  "links": {
+    "linkedin": "[LinkedIn URL]",
+    "website": "[Website URL]",
+    "email": "[Email Address]"
+  },
+  "experience": [
+    {
+      "role": "SDET",
+      "company": "Prophecy",
+      "url": "https://www.prophecy.io/",
+      "current": true,
+      "note": "Testing and breaking things so they hold up in production."
+    },
+    {
+      "role": "SDET Consultant",
+      "company": "Harness",
+      "url": "https://www.harness.io/",
+      "current": false,
+      "note": "Played key roles in testing and hardening the platform."
+    }
+  ],
+  "stack": [
+    {
+      "group": "Testing",
+      "color": "#3ddc97",
+      "items": [
+        { "name": "Playwright", "mono": "PW", "hex": "#2EAD33" },
+        { "name": "Cypress", "icon": "cypress" },
+        { "name": "Selenium", "icon": "selenium" },
+        { "name": "Java + TestNG", "icon": "openjdk", "hex": "#F89820" },
+        { "name": "PyTest", "icon": "pytest" },
+        { "name": "Postman", "icon": "postman" }
+      ]
+    },
+    {
+      "group": "Languages",
+      "color": "#60a5fa",
+      "items": [
+        { "name": "TypeScript", "icon": "typescript" },
+        { "name": "JavaScript", "icon": "javascript" },
+        { "name": "Python", "icon": "python" },
+        { "name": "HTML", "icon": "html5" },
+        { "name": "CSS", "icon": "css", "hex": "#A77BDB" }
+      ]
+    },
+    {
+      "group": "CI / Cloud",
+      "color": "#f5a524",
+      "items": [
+        { "name": "GitHub Actions", "icon": "githubactions" },
+        { "name": "Docker", "icon": "docker" },
+        { "name": "AWS", "mono": "aws", "hex": "#FF9900" },
+        { "name": "Git", "icon": "git" }
+      ]
+    },
+    {
+      "group": "AI / Agentic",
+      "color": "#a78bfa",
+      "items": [
+        { "name": "Agentic workflows", "mono": "AG", "hex": "#a78bfa" },
+        { "name": "Skill creation", "mono": "SK", "hex": "#c084fc" },
+        { "name": "Knowledge bases", "mono": "KB", "hex": "#818cf8" },
+        { "name": "AI for QA", "mono": "AI", "hex": "#e879f9" }
+      ]
+    }
+  ],
+  "focus": [
+    "Agentic AI workflows that write, triage and heal tests",
+    "Custom skills + knowledge bases for engineering teams",
+    "Fast, flake-free E2E suites wired into CI"
+  ],
+  "spec": [
+    {
+      "describe": "career",
+      "tests": [
+        {
+          "title": "is currently an SDET at Prophecy",
+          "ms": 212,
+          "steps": ["await page.goto('prophecy.io')", "await expect(role).toHaveText('SDET')"]
+        },
+        {
+          "title": "was previously an SDET Consultant at Harness",
+          "ms": 187,
+          "steps": ["await page.goto('harness.io')", "await expect(impact).toBeVisible()"]
+        }
+      ]
+    },
+    {
+      "describe": "craft",
+      "tests": [
+        {
+          "title": "automates E2E with Playwright, Cypress & Selenium",
+          "ms": 1340,
+          "steps": ["await runner.use(['playwright','cypress','selenium'])", "expect(flakes).toBe(0)"]
+        },
+        {
+          "title": "validates APIs with Postman & PyTest",
+          "ms": 402,
+          "steps": ["const res = await api.get('/contract')", "expect(res.status).toBe(200)"]
+        },
+        {
+          "title": "ships quality gates via GitHub Actions, Docker & AWS",
+          "ms": 655,
+          "steps": ["await ci.pipeline('main').run()", "expect(gate).toBe('green')"]
+        },
+        {
+          "title": "builds agentic AI workflows, skills & knowledge bases",
+          "ms": 918,
+          "steps": ["const agent = await ai.createAgent({ skills, kb })", "expect(agent.triage(bug)).toBeTruthy()"]
+        }
+      ]
+    },
+    {
+      "describe": "github (live)",
+      "tests": [
+        {
+          "live": "contributions",
+          "title": "made {contributions} contributions in the last year",
+          "ms": 96,
+          "steps": ["const cal = await gh.contributions()", "expect(cal.total).toBe({contributions})"]
+        },
+        {
+          "live": "longestStreak",
+          "title": "held a {longestStreak}-day green streak",
+          "ms": 58,
+          "steps": ["const s = streak(cal)", "expect(s.longest).toBe({longestStreak})"]
+        },
+        {
+          "live": "repos",
+          "title": "maintains {repos} public repos with {stars} stars",
+          "ms": 73,
+          "steps": ["const repos = await gh.repos()", "expect(repos.length).toBe({repos})"]
+        }
+      ]
+    },
+    {
+      "describe": "human",
+      "tests": [
+        {
+          "title": "sleeps 8 hours a night",
+          "skip": "known flaky",
+          "ms": 0,
+          "steps": ["test.fixme(true, 'flaky since first prod incident')"]
+        }
+      ]
+    }
+  ]
+}

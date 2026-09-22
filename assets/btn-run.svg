@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="164" height="44" viewBox="0 0 164 44" role="img" aria-label="Run me live">
+<style>.g{animation:glow 2.4s ease-in-out infinite}@keyframes glow{50%{stroke-opacity:.2}}@media (prefers-reduced-motion: reduce){.g{animation:none}}</style>
+<rect x="1" y="1" width="162" height="42" rx="11" fill="#3ddc97" stroke="#3ddc97" stroke-opacity=".7"/>
+<rect class="g" x="1" y="1" width="162" height="42" rx="11" fill="none" stroke="#ffffff" stroke-opacity=".7" stroke-width="1.5"/>
+<text x="82" y="27" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="14" font-weight="700" fill="#07130e">▶  Run me live</text>
+</svg>

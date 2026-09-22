@@ -1,0 +1,40 @@
+name: "💼 Feature request: hire Prakhar"
+description: Propose a role, a collaboration, or a project. This is the fastest way to reach me.
+title: "[hire] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for stopping by. Fill in what you can; nothing here is strictly required except a way to reach you.
+        Heads-up: issues in this repo are **public**. If you'd rather keep details private, just leave a contact and I'll reach out.
+  - type: input
+    id: company
+    attributes:
+      label: Company / team
+      placeholder: Acme Inc. · Platform Quality
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of request is this?
+      options:
+        - Full-time role
+        - Contract / consulting
+        - Open-source collaboration
+        - Speaking / writing
+        - Just saying hi
+  - type: textarea
+    id: details
+    attributes:
+      label: Acceptance criteria
+      description: What would success look like? Role scope, stack, team size, anything useful.
+      placeholder: |
+        Given a team shipping fast,
+        When Prakhar joins,
+        Then flaky tests go to zero and releases get boring (the good kind).
+  - type: input
+    id: contact
+    attributes:
+      label: How can I reach you?
+      placeholder: email, LinkedIn, or "reply here"
+    validations:
+      required: true

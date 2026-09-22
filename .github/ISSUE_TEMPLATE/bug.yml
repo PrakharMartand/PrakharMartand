@@ -1,0 +1,32 @@
+name: "🐞 Bug report: found a bug in Prakhar"
+description: Feedback, a typo on this profile, a hot take on testing, or anything else. Every report gets triaged.
+title: "[bug] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        You found a bug in the system under test. Nice catch.
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - cosmetic (typo, broken link, pixel off)
+        - minor (feedback or suggestion)
+        - major (strong opinion about testing)
+        - blocker (we need to talk now)
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open the profile
+        2. Scroll to …
+        3. See …
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected vs. actual
+      placeholder: Expected … but instead …

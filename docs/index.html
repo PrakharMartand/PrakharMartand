@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prakhar Martand · readme.spec</title>
+  <meta name="description" content="Prakhar Martand, SDET. A profile you can run like a test suite.">
+  <meta property="og:title" content="Prakhar Martand · readme.spec">
+  <meta property="og:description" content="A profile you can run like a test suite.">
+  <meta name="theme-color" content="#0b0f14">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b0f14'/%3E%3Cpath d='M9 16.5l4.5 4.5L23 11' stroke='%233ddc97' stroke-width='3.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="readme.spec home">
+      <span class="brand-mark" aria-hidden="true">✓</span>
+      <span>readme.spec</span>
+      <span class="crumb" id="crumb"></span>
+    </a>
+    <nav class="top-actions">
+      <button class="btn primary" id="runAll" type="button">▶ Run all</button>
+      <div class="seg" role="group" aria-label="View mode">
+        <button type="button" data-mode="dev" aria-pressed="true">🧑‍💻 Dev</button>
+        <button type="button" data-mode="recruiter" aria-pressed="false">👔 Recruiter</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="ui" id="dev">
+    <aside class="tree panel" aria-label="Tests">
+      <div class="panel-head">
+        <span>TESTS</span>
+        <span class="counts" id="counts"></span>
+      </div>
+      <input class="filter" id="filter" type="search" placeholder="Filter tests…" aria-label="Filter tests">
+      <div class="progress" aria-hidden="true"><div class="progress-bar" id="progress"></div></div>
+      <ul class="tests" id="tests"></ul>
+      <div class="bugmeter" id="bugmeter" title="There are bugs hidden on this page. Find them.">
+        <span>🐞 bugs caught</span><b id="bugCount">0</b>
+      </div>
+    </aside>
+
+    <section class="viewer">
+      <div class="timeline panel" aria-label="Timeline">
+        <div class="ticks" id="ticks"></div>
+        <div class="lanes" id="lanes"></div>
+      </div>
+      <div class="panes">
+        <div class="snapshot panel">
+          <div class="panel-head"><span>SNAPSHOT</span><span class="locator" id="locator"></span></div>
+          <div class="stage" id="stage"></div>
+        </div>
+        <div class="details panel">
+          <div class="tabs" role="tablist">
+            <button type="button" role="tab" data-tab="actions" aria-selected="true">Actions</button>
+            <button type="button" role="tab" data-tab="source" aria-selected="false">Source</button>
+          </div>
+          <ol class="steps" id="steps"></ol>
+          <pre class="source" id="source" hidden></pre>
+        </div>
+      </div>
+      <div class="terminal panel">
+        <div class="panel-head"><span>TERMINAL</span><span class="hint">try <kbd>help</kbd>, <kbd>hire</kbd>, <kbd>sudo</kbd>…</span></div>
+        <div class="log" id="log" aria-live="polite"></div>
+        <form class="prompt" id="prompt" autocomplete="off">
+          <label for="cmd">$</label>
+          <input id="cmd" spellcheck="false" placeholder="type a command, e.g. help">
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <main class="resume-wrap" id="recruiter" hidden>
+    <article class="resume" id="resume"></article>
+  </main>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

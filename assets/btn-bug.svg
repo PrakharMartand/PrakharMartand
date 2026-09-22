@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="250" height="44" viewBox="0 0 250 44" role="img" aria-label="File a bug against me">
+<style>.g{animation:glow 2.4s ease-in-out infinite}@keyframes glow{50%{stroke-opacity:.2}}@media (prefers-reduced-motion: reduce){.g{animation:none}}</style>
+<rect x="1" y="1" width="248" height="42" rx="11" fill="#0b0f14" stroke="#ff6b6b" stroke-opacity=".7"/>
+
+<text x="125" y="27" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="14" font-weight="700" fill="#ff6b6b">!  File a bug against me</text>
+</svg>
