@@ -251,7 +251,38 @@ window.PROFILE = {
       ]
     }
   ],
-  "github": null,
+  "github": {
+    "fetchedAt": "2026-09-22T18:22:18.511Z",
+    "contributions": 16,
+    "longestStreak": 1,
+    "currentStreak": 1,
+    "repos": 7,
+    "stars": 0,
+    "followers": 1,
+    "pullRequests": 59,
+    "languages": [
+      {
+        "name": "JavaScript",
+        "color": "#f1e05a",
+        "pct": 86.3
+      },
+      {
+        "name": "CSS",
+        "color": "#663399",
+        "pct": 12.7
+      },
+      {
+        "name": "Shell",
+        "color": "#89e051",
+        "pct": 0.6
+      },
+      {
+        "name": "HTML",
+        "color": "#e34c26",
+        "pct": 0.4
+      }
+    ]
+  },
   "suite": [
     {
       "describe": "career",
@@ -341,37 +372,37 @@ window.PROFILE = {
         {
           "n": 7,
           "live": "contributions",
-          "title": "made … contributions in the last year",
-          "status": "pending",
-          "note": "awaiting first CI run",
+          "title": "made 16 contributions in the last year",
+          "status": "pass",
+          "note": null,
           "ms": 96,
           "steps": [
             "const cal = await gh.contributions()",
-            "expect(cal.total).toBe(…)"
+            "expect(cal.total).toBe(16)"
           ]
         },
         {
           "n": 8,
           "live": "longestStreak",
-          "title": "held a …-day green streak",
-          "status": "pending",
-          "note": "awaiting first CI run",
+          "title": "held a 1-day green streak",
+          "status": "pass",
+          "note": null,
           "ms": 58,
           "steps": [
             "const s = streak(cal)",
-            "expect(s.longest).toBe(…)"
+            "expect(s.longest).toBe(1)"
           ]
         },
         {
           "n": 9,
           "live": "repos",
-          "title": "maintains … public repos with … stars",
-          "status": "pending",
-          "note": "awaiting first CI run",
+          "title": "maintains 7 public repos with 0 stars",
+          "status": "pass",
+          "note": null,
           "ms": 73,
           "steps": [
             "const repos = await gh.repos()",
-            "expect(repos.length).toBe(…)"
+            "expect(repos.length).toBe(7)"
           ]
         }
       ]
@@ -447,5 +478,5 @@ window.PROFILE = {
       "hex": "#F03C2E"
     }
   },
-  "runDate": "awaiting first CI run"
+  "runDate": "2026-09-22"
 };
