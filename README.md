@@ -5,7 +5,6 @@ I am a SDET at [`Prophecy`](https://www.prophecy.io/) Have played key roles as S
 ---
 
 <p align="center">
-  <img src="https://readme-stats.itsvg.in/api?username=PrakharMartand&show_icons=true&theme=highcontrast" width="400"!important>
   <img src="https://streak-stats.demolab.com?user=PrakharMartand&theme=dark&hide_border=true" width="430">
 </p>
 
