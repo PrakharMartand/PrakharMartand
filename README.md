@@ -69,7 +69,7 @@ export default defineConfig({
 
 <a href="https://github.com/PrakharMartand/PrakharMartand/issues/new?template=bug.yml"><img src="assets/btn-bug.svg" height="40" alt="File a bug against me"></a> <a href="https://github.com/PrakharMartand/PrakharMartand/issues/new?template=hire.yml"><img src="assets/btn-hire.svg" height="40" alt="Feature request: hire me"></a>
 
-<sub>This profile is a test suite. It is generated from <a href="profile.json"><code>profile.json</code></a> and re-runs every night in GitHub Actions.<br>
+<sub>This profile is a test suite. It is generated from <a href="profile.json"><code>profile.json</code></a> and re-runs every hour in GitHub Actions.<br>
 Fork it, edit one file, and ship your own. See <a href="TEMPLATE.md"><code>TEMPLATE.md</code></a>.</sub>
 
 </div>
