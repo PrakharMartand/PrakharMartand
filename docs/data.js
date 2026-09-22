@@ -252,24 +252,25 @@ window.PROFILE = {
     }
   ],
   "github": {
-    "fetchedAt": "2026-09-22T18:22:18.511Z",
-    "contributions": 16,
+    "fetchedAt": "2026-09-22",
+    "contributions": 22,
+    "hiddenPrivate": 6,
     "longestStreak": 1,
     "currentStreak": 1,
     "repos": 7,
     "stars": 0,
     "followers": 1,
-    "pullRequests": 59,
+    "pullRequests": 60,
     "languages": [
       {
         "name": "JavaScript",
         "color": "#f1e05a",
-        "pct": 86.3
+        "pct": 86.4
       },
       {
         "name": "CSS",
         "color": "#663399",
-        "pct": 12.7
+        "pct": 12.6
       },
       {
         "name": "Shell",
@@ -372,13 +373,13 @@ window.PROFILE = {
         {
           "n": 7,
           "live": "contributions",
-          "title": "made 16 contributions in the last year",
+          "title": "made 22 contributions in the last year",
           "status": "pass",
           "note": null,
           "ms": 96,
           "steps": [
             "const cal = await gh.contributions()",
-            "expect(cal.total).toBe(16)"
+            "expect(cal.total).toBe(22)"
           ]
         },
         {
