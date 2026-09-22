@@ -32,7 +32,7 @@ function streaks(days) {
   return { longest, current };
 }
 
-function summarize(user) {
+function summarize(user, login) {
   const collection = user.contributionsCollection;
   const repos = user.repositories.nodes;
   const langs = new Map();
@@ -57,6 +57,7 @@ function summarize(user) {
 
   return {
     // Date only, so hourly runs with unchanged data produce no diff and no commit.
+    login,
     fetchedAt: new Date().toISOString().slice(0, 10),
     contributions: cal.totalContributions + hiddenPrivate,
     hiddenPrivate,
@@ -79,11 +80,13 @@ async function query(login, token) {
   });
   const body = await res.json();
   if (!res.ok || body.errors || !body.data?.user) throw new Error(JSON.stringify(body.errors ?? body).slice(0, 300));
-  return summarize(body.data.user);
+  return summarize(body.data.user, login);
 }
 
 export async function loadGithub(login, cachePath) {
-  const cached = await readFile(cachePath, "utf8").then(JSON.parse).catch(() => null);
+  const stored = await readFile(cachePath, "utf8").then(JSON.parse).catch(() => null);
+  // A copied repo carries the original author's cache; never show it for someone else.
+  const cached = stored && (!stored.login || stored.login.toLowerCase() === login.toLowerCase()) ? stored : null;
   // A personal token reads the profile as its owner, which includes private and org contributions.
   // The Actions GITHUB_TOKEN is a bot identity that only sees public activity.
   const tokens = [
