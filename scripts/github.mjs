@@ -103,7 +103,7 @@ async function query(login, token) {
 export async function loadGithub(login, cachePath) {
   const stored = await readFile(cachePath, "utf8").then(JSON.parse).catch(() => null);
   // A copied repo carries the original author's cache; never show it for someone else.
-  const cached = stored && (!stored.login || stored.login.toLowerCase() === login.toLowerCase()) ? stored : null;
+  const cached = stored?.login?.toLowerCase() === login.toLowerCase() ? stored : null;
   // A personal token reads the profile as its owner, which includes private and org contributions.
   // The Actions GITHUB_TOKEN is a bot identity that only sees public activity.
   const tokens = [

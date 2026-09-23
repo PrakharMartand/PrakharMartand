@@ -251,7 +251,7 @@ ${config}
 
 <div align="center">
 
-${btn("run")} ${btn("recruiter")} ${btn("linkedin")} ${btn("website")} ${btn("email")}
+${["run", "recruiter", "linkedin", "website", "email"].map((k) => btn(k)).filter(Boolean).join(" ")}
 
 </div>
 
@@ -265,7 +265,7 @@ ${developer}
 each jellyfish is a repository (size = stars, glow = recent pushes), and the seabed is every day of work. The moon is tonight's.<br>
 Regenerated hourly from live GitHub data. <a href="TEMPLATE.md">Make your own</a>.</sub>
 
-${btn("bug", 40)} ${btn("hire", 40)}
+${[btn("bug", 40), btn("hire", 40)].filter(Boolean).join(" ")}
 
 </div>
 `;
@@ -276,7 +276,7 @@ ${btn("bug", 40)} ${btn("hire", 40)}
 
 <a href="${links.run}"><img src="assets/hero.svg" width="100%" alt="${profile.name}, ${current.role} at ${current.company}"></a>
 
-${btn("run")} ${btn("recruiter")} ${btn("linkedin")} ${btn("website")} ${btn("email")}
+${["run", "recruiter", "linkedin", "website", "email"].map((k) => btn(k)).filter(Boolean).join(" ")}
 
 </div>
 
@@ -298,7 +298,7 @@ ${developer}
 
 ### Found a bug in me?
 
-${btn("bug", 40)} ${btn("hire", 40)}
+${[btn("bug", 40), btn("hire", 40)].filter(Boolean).join(" ")}
 
 <sub>This profile is a test suite. It is generated from <a href="profile.json"><code>profile.json</code></a> and re-runs every hour in GitHub Actions.<br>
 Fork it, edit one file, and ship your own. See <a href="TEMPLATE.md"><code>TEMPLATE.md</code></a>.</sub>

@@ -3,7 +3,7 @@
 
 <div align="center">
 
-<a href="https://prakharmartand.github.io/PrakharMartand/"><img src="assets/btn-run.svg" height="44" alt="Explore interactively"></a> <a href="https://prakharmartand.github.io/PrakharMartand/#recruiter"><img src="assets/btn-recruiter.svg" height="44" alt="Résumé"></a>   
+<a href="https://prakharmartand.github.io/PrakharMartand/"><img src="assets/btn-run.svg" height="44" alt="Explore interactively"></a> <a href="https://prakharmartand.github.io/PrakharMartand/#recruiter"><img src="assets/btn-recruiter.svg" height="44" alt="Résumé"></a>
 
 </div>
 
