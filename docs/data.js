@@ -252,15 +252,15 @@ window.PROFILE = {
     }
   ],
   "github": {
-    "fetchedAt": "2026-09-22",
-    "contributions": 22,
+    "fetchedAt": "2026-09-23",
+    "contributions": 25,
     "hiddenPrivate": 6,
-    "longestStreak": 1,
-    "currentStreak": 1,
+    "longestStreak": 2,
+    "currentStreak": 2,
     "repos": 7,
     "stars": 0,
     "followers": 1,
-    "pullRequests": 60,
+    "pullRequests": 61,
     "languages": [
       {
         "name": "JavaScript",
@@ -373,25 +373,25 @@ window.PROFILE = {
         {
           "n": 7,
           "live": "contributions",
-          "title": "made 22 contributions in the last year",
+          "title": "made 25 contributions in the last year",
           "status": "pass",
           "note": null,
           "ms": 96,
           "steps": [
             "const cal = await gh.contributions()",
-            "expect(cal.total).toBe(22)"
+            "expect(cal.total).toBe(25)"
           ]
         },
         {
           "n": 8,
           "live": "longestStreak",
-          "title": "held a 1-day green streak",
+          "title": "held a 2-day green streak",
           "status": "pass",
           "note": null,
           "ms": 58,
           "steps": [
             "const s = streak(cal)",
-            "expect(s.longest).toBe(1)"
+            "expect(s.longest).toBe(2)"
           ]
         },
         {
@@ -479,5 +479,5 @@ window.PROFILE = {
       "hex": "#F03C2E"
     }
   },
-  "runDate": "2026-09-22"
+  "runDate": "2026-09-23"
 };
