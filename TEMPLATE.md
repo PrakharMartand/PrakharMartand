@@ -1,11 +1,11 @@
 # readme.spec: set it up for your own profile
 
-Your GitHub profile, as a test suite. You edit one file, `profile.json`, and a GitHub Action generates everything else, then refreshes your live GitHub stats every hour.
+Your GitHub profile, alive: an animated scene (or a test suite) grown from your real GitHub data. You edit one file, `profile.json`, and a GitHub Action generates everything else, then refreshes your live stats every hour.
 
 | Output | What it is |
 |---|---|
 | `README.md` | Profile README with a recruiter view and a developer view |
-| `assets/*.svg` | Animated header, test run, tech stack and contribution history |
+| `assets/*.svg` | The animated scene (`descent` theme) or header, test run, stack and history (`spec` theme) |
 | `docs/` | Interactive site: runnable tests, terminal, bug hunt, printable résumé |
 | `.github/ISSUE_TEMPLATE/` | "Hire me" and "bug report" issue forms |
 
@@ -32,6 +32,7 @@ Open it on GitHub, click the pencil icon, and change:
 | `stack` | Your tools, grouped. `icon` is a [Simple Icons](https://simpleicons.org) slug; for anything without a logo, use `mono` (two letters) and `hex` (colour) |
 | `focus` | What you're exploring right now |
 | `spec` | The tests shown in the animated run; see [Writing tests](#writing-tests) |
+| `theme` | `"descent"` (animated scene from dusk sky to deep sea) or `"spec"` (profile as a test suite) |
 | `site` | Delete this line; it's worked out automatically |
 
 Commit to `main`. The workflow starts on its own.

@@ -384,7 +384,15 @@ export function historySvg(gh) {
   return frame({ w, h: ly, title: "pipeline history — contributions, last 52 weeks", body, css, label: gh ? `${gh.contributions} contributions in the last year` : "Contribution history pending first CI run" });
 }
 
-export function buttonSvg({ label, glyph, accent, primary = false }) {
+export function buttonSvg({ label, glyph, accent, primary = false }, look = "spec") {
+  if (look === "descent") {
+    const gold = "#d9b76e", w = Math.round([...label].length * 8.4) + 48, h = 44;
+    return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-label="${esc(label)}">
+<rect x="1" y="1" width="${w - 2}" height="${h - 2}" rx="22" fill="${primary ? gold : "#0b1430"}" stroke="${gold}" stroke-opacity="${primary ? 1 : 0.65}"/>
+<text x="${w / 2}" y="${h / 2 + 5}" text-anchor="middle" font-family="Georgia, 'Iowan Old Style', 'Times New Roman', serif" font-size="15" font-style="italic" fill="${primary ? "#0b1430" : "#f4e6bd"}">${esc(label)}</text>
+</svg>
+`;
+  }
   const text = `${glyph}  ${label}`;
   const w = Math.round([...text].length * 8.6) + 44, h = 44;
   const fg = primary ? "#07130e" : C.text;

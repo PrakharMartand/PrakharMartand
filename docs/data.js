@@ -3,6 +3,7 @@ window.PROFILE = {
   "name": "Prakhar Martand",
   "handle": "PrakharMartand",
   "title": "SDET",
+  "theme": "descent",
   "tagline": "I break things for a living, so your users don't have to.",
   "summary": "Software Development Engineer in Test at Prophecy, previously an SDET Consultant at Harness. I design automation that catches regressions before they ship, and lately I build agentic AI workflows, custom skills and knowledge bases that make testing smarter.",
   "site": "https://prakharmartand.github.io/PrakharMartand/",
@@ -252,6 +253,7 @@ window.PROFILE = {
     }
   ],
   "github": {
+    "login": "PrakharMartand",
     "fetchedAt": "2026-09-23",
     "contributions": 25,
     "hiddenPrivate": 6,

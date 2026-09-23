@@ -7,7 +7,10 @@ const QUERY = `query($login: String!) {
     repositories(ownerAffiliations: OWNER, isFork: false, privacy: PUBLIC, first: 100, orderBy: {field: STARGAZERS, direction: DESC}) {
       totalCount
       nodes {
+        name
         stargazerCount
+        pushedAt
+        primaryLanguage { name color }
         languages(first: 10, orderBy: {field: SIZE, direction: DESC}) { edges { size node { name color } } }
       }
     }
@@ -49,6 +52,19 @@ function summarize(user, login) {
     .slice(0, 6)
     .map((l) => ({ name: l.name, color: l.color, pct: +((l.size / total) * 100).toFixed(1) }));
 
+  // Recently pushed repos glow brightest; activity decays over about six weeks.
+  const now = Date.now();
+  const repoList = repos
+    .map((r) => ({
+      name: r.name,
+      stars: r.stargazerCount,
+      lang: r.primaryLanguage?.name ?? "",
+      color: r.primaryLanguage?.color ?? "#8b949e",
+      activity: +Math.exp(-(now - Date.parse(r.pushedAt)) / (864e5 * 45)).toFixed(3),
+    }))
+    .sort((a, b) => b.activity + b.stars * 0.05 - (a.activity + a.stars * 0.05))
+    .slice(0, 5);
+
   const cal = collection.contributionCalendar;
   // Private contributions the token can't see are only available as a total, not per day.
   const hiddenPrivate = collection.restrictedContributionsCount;
@@ -68,6 +84,7 @@ function summarize(user, login) {
     followers: user.followers.totalCount,
     pullRequests: user.pullRequests.totalCount,
     languages,
+    repoList,
     weeks,
   };
 }
