@@ -253,11 +253,11 @@ window.PROFILE = {
   ],
   "github": {
     "fetchedAt": "2026-09-24",
-    "contributions": 25,
+    "contributions": 26,
     "hiddenPrivate": 6,
-    "longestStreak": 2,
-    "currentStreak": 2,
-    "repos": 7,
+    "longestStreak": 3,
+    "currentStreak": 3,
+    "repos": 8,
     "stars": 0,
     "followers": 1,
     "pullRequests": 61,
@@ -265,17 +265,17 @@ window.PROFILE = {
       {
         "name": "JavaScript",
         "color": "#f1e05a",
-        "pct": 86.4
+        "pct": 87.4
       },
       {
         "name": "CSS",
         "color": "#663399",
-        "pct": 12.6
+        "pct": 11.7
       },
       {
         "name": "Shell",
         "color": "#89e051",
-        "pct": 0.6
+        "pct": 0.5
       },
       {
         "name": "HTML",
@@ -373,37 +373,37 @@ window.PROFILE = {
         {
           "n": 7,
           "live": "contributions",
-          "title": "made 25 contributions in the last year",
+          "title": "made 26 contributions in the last year",
           "status": "pass",
           "note": null,
           "ms": 96,
           "steps": [
             "const cal = await gh.contributions()",
-            "expect(cal.total).toBe(25)"
+            "expect(cal.total).toBe(26)"
           ]
         },
         {
           "n": 8,
           "live": "longestStreak",
-          "title": "held a 2-day green streak",
+          "title": "held a 3-day green streak",
           "status": "pass",
           "note": null,
           "ms": 58,
           "steps": [
             "const s = streak(cal)",
-            "expect(s.longest).toBe(2)"
+            "expect(s.longest).toBe(3)"
           ]
         },
         {
           "n": 9,
           "live": "repos",
-          "title": "maintains 7 public repos with 0 stars",
+          "title": "maintains 8 public repos with 0 stars",
           "status": "pass",
           "note": null,
           "ms": 73,
           "steps": [
             "const repos = await gh.repos()",
-            "expect(repos.length).toBe(7)"
+            "expect(repos.length).toBe(8)"
           ]
         }
       ]
