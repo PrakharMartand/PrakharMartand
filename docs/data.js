@@ -259,7 +259,7 @@ window.PROFILE = {
     "currentStreak": 0,
     "repos": 8,
     "stars": 0,
-    "followers": 1,
+    "followers": 2,
     "pullRequests": 61,
     "languages": [
       {
